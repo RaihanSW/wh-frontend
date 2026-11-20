@@ -1,0 +1,14 @@
+# Secrets — never bake into images
+.env
+
+# Git
+.git/
+.gitignore
+
+# Node artifacts
+node_modules/
+build/
+coverage/
+
+# OS
+.DS_Store
