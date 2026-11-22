@@ -15,6 +15,110 @@ const Nav = () => {
   const navigate = useNavigate();
   const topbarRef = useRef(null);
 
+  // To be deleted later
+  const webMenu = [
+                {
+                    "fa_tag": "",
+                    "id": 3,
+                    "name": "Master",
+                    "order_id": 1,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "masters",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 7,
+                    "name": "List Klaim",
+                    "order_id": 1,
+                    "parent_id": 4,
+                    "parent_name": "Claim",
+                    "slug": "operations_claim",
+                    "url": "/Operations/Claim"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 11,
+                    "name": "User",
+                    "order_id": 1,
+                    "parent_id": 6,
+                    "parent_name": "Users",
+                    "slug": "users_user",
+                    "url": "Users/User/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 4,
+                    "name": "Claim",
+                    "order_id": 2,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "claim",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 12,
+                    "name": "Role",
+                    "order_id": 2,
+                    "parent_id": 6,
+                    "parent_name": "Users",
+                    "slug": "users_role",
+                    "url": "Users/Role/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 13,
+                    "name": "AccessUser",
+                    "order_id": 3,
+                    "parent_id": 6,
+                    "parent_name": "Users",
+                    "slug": "users_accessuser",
+                    "url": "Users/Accessuser/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 1,
+                    "name": "Menu",
+                    "order_id": 4,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "menu",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 2,
+                    "name": "Webmenu",
+                    "order_id": 4,
+                    "parent_id": 1,
+                    "parent_name": "Menu",
+                    "slug": "menu_webmenu",
+                    "url": "Menu/Webmenu/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 14,
+                    "name": "AccessRole",
+                    "order_id": 4,
+                    "parent_id": 6,
+                    "parent_name": "Users",
+                    "slug": "users_accessrole",
+                    "url": "Users/Accessrole/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 6,
+                    "name": "Users",
+                    "order_id": 5,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "users",
+                    "url": "#"
+                },
+            ]
+
   const storedToken = localStorage.getItem("token");
 
   useEffect(() => {
@@ -57,7 +161,7 @@ const Nav = () => {
       })
       .then(
         (res) => {
-          const listMenu = res.data.express21.results.data.map((menu) => ({
+          const listMenu = webMenu.map((menu) => ({
             ...menu,
             isVisible: false,
           }));
@@ -67,15 +171,24 @@ const Nav = () => {
           setLoading(false);
         },
         (error) => {
+          const listMenu = webMenu.map((menu) => ({
+            ...menu,
+            isVisible: false,
+          }));
+          setMenuList(listMenu);
+          const menuParent = listMenu.filter((menu) => menu.parent_id === null);
+          setParentMenu(menuParent);
+          setLoading(false);
+
           if (error.response.status === 401) {
             console.error("Silahkan login kembali.");
             setError("Silahkan login kembali");
           }
           setError(error.message);
           setLoading(false);
-          localStorage.removeItem("account");
-          localStorage.removeItem("token");
-          window.location.href = "/";
+          // localStorage.removeItem("account");
+          // localStorage.removeItem("token");
+          // window.location.href = "/";
         }
       );
   };

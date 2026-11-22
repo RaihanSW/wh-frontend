@@ -1,0 +1,185 @@
+{
+    "wh": {
+        "results": {
+            "data": [
+                {
+                    "fa_tag": "",
+                    "id": 1,
+                    "name": "Master",
+                    "order_id": 1,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "master",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 16,
+                    "name": "Status Trail",
+                    "order_id": 1,
+                    "parent_id": 2,
+                    "parent_name": "Dashboard",
+                    "slug": "dashboard_statustrail",
+                    "url": "/Dashboard/Trail"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 12,
+                    "name": "User",
+                    "order_id": 1,
+                    "parent_id": 4,
+                    "parent_name": "Users",
+                    "slug": "users_user",
+                    "url": "/Users/User/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 11,
+                    "name": "Webmenu",
+                    "order_id": 1,
+                    "parent_id": 3,
+                    "parent_name": "Menu",
+                    "slug": "menu_webmenu",
+                    "url": "/Menu/Webmenu/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 8,
+                    "name": "Dashboard Fleet",
+                    "order_id": 1,
+                    "parent_id": 2,
+                    "parent_name": "Dashboard",
+                    "slug": "dashboard_fleet",
+                    "url": "/Dashboard/Fleet"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 2,
+                    "name": "Dashboard",
+                    "order_id": 2,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "dashboard",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 13,
+                    "name": "Role",
+                    "order_id": 2,
+                    "parent_id": 4,
+                    "parent_name": "Users",
+                    "slug": "users_role",
+                    "url": "/Users/Role/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 9,
+                    "name": "Dashboard Kurir",
+                    "order_id": 2,
+                    "parent_id": 2,
+                    "parent_name": "Dashboard",
+                    "slug": "dashboard_kurir",
+                    "url": "/Dashboard/Kurir"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 6,
+                    "name": "Master QR",
+                    "order_id": 2,
+                    "parent_id": 1,
+                    "parent_name": "Master",
+                    "slug": "master_qr",
+                    "url": "/Master/QR"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 7,
+                    "name": "Master Accident",
+                    "order_id": 3,
+                    "parent_id": 1,
+                    "parent_name": "Master",
+                    "slug": "master_accident",
+                    "url": "/Master/Accident"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 10,
+                    "name": "Dashboard List",
+                    "order_id": 3,
+                    "parent_id": 2,
+                    "parent_name": "Dashboard",
+                    "slug": "dashboard_list",
+                    "url": "/Dashboard/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 14,
+                    "name": "AccessUser",
+                    "order_id": 3,
+                    "parent_id": 4,
+                    "parent_name": "Users",
+                    "slug": "users_accessuser",
+                    "url": "/Users/Accessuser/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 3,
+                    "name": "Menu",
+                    "order_id": 3,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "menu",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 5,
+                    "name": "Master Fleet",
+                    "order_id": 4,
+                    "parent_id": 1,
+                    "parent_name": "Master",
+                    "slug": "master_fleet",
+                    "url": "/Master/Fleet"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 4,
+                    "name": "Users",
+                    "order_id": 4,
+                    "parent_id": null,
+                    "parent_name": "",
+                    "slug": "users",
+                    "url": "#"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 15,
+                    "name": "AccessRole",
+                    "order_id": 4,
+                    "parent_id": 4,
+                    "parent_name": "Users",
+                    "slug": "users_accessrole",
+                    "url": "/Users/Accessrole/List"
+                },
+                {
+                    "fa_tag": "",
+                    "id": 17,
+                    "name": "Guest Note",
+                    "order_id": 5,
+                    "parent_id": 1,
+                    "parent_name": "Master",
+                    "slug": "master_guestlist",
+                    "url": "/Master/Guestnote"
+                }
+            ],
+            "total_records": 17
+        },
+        "status": {
+            "error_code": -1,
+            "error_message": "no error",
+            "message": "ok",
+            "status_code": 200
+        }
+    }
+}

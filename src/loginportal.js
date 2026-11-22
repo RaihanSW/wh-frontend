@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css'
 
+import warehouseBG from "../src/assets/img/warehouse_1.webp"
+
 const LoginPortal = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +19,7 @@ const LoginPortal = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const apiUrl = `${process.env.REACT_APP_BACKEND_HOST}/users/account/login`;
+    const apiUrl = `${process.env.REACT_APP_BACKEND_HOST}/account/login`;
 
     try {
       console.log('Sending data:', { username, password });
@@ -37,8 +39,10 @@ const LoginPortal = () => {
       }
 
       const data = await response.json();
-      localStorage.setItem('account', JSON.stringify(data.express21.results.data.account));
-      localStorage.setItem('token', data.express21.results.data.api_key);
+      localStorage.setItem('account', JSON.stringify(data.results.data));
+      localStorage.setItem('token', data.results.token);
+      console.log(data.results.token);
+      debugger
       navigate('/landingpage');
     } catch (err) {
       setError(err.message);
@@ -47,53 +51,83 @@ const LoginPortal = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 to-blue-800">
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
-        
-        <div className="flex justify-center mb-4">
-          <img 
-            src="https://storage.googleapis.com/21e_hayzm5123abc_qweasdzxc/aiRheTjkQwe/web-ess/logo%20ess%20FIX.png" 
-            alt="Fleet 21 Logo"
-            className="w-40 h-40 object-contain rounded-2xl"
+    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+      {/*  */}
+      <section
+        className="hidden lg:flex items-center justify-center bg-cover bg-center bg-no-repeat p-10"
+        style={{ backgroundImage: `url(${warehouseBG})` }}
+      >
+      </section>
+
+      <main className="flex min-h-screen items-center justify-center bg-white px-6 py-10 sm:px-10 lg:px-16">
+        <form onSubmit={handleLogin} className="w-full max-w-md">
+          <div className="mb-8 text-center lg:text-left">
+            <div className="mb-5 flex justify-center">
+              <img
+                src="https://storage.googleapis.com/21e_hayzm5123abc_qweasdzxc/aiRheTjkQwe/web-ess/logo%20ess%20FIX.png"
+                alt="21 Express"
+                className="h-28 w-28 object-contain"
+              />
+            </div>
+
+            <h1 className="text-3xl font-mono font-bold text-gray-900">
+              Warehouse Management
+            </h1>
+            <p className="mt-2 text-sm text-gray-500">
+              Login untuk dapat mengakses fitur Warehouse Management
+            </p>
+          </div>
+
+          {error && (
+            <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+              {error}
+            </p>
+          )}
+
+          <label htmlFor="username" className="mb-2 block text-sm font-semibold text-gray-700">
+            Username
+          </label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Masukkan username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            className="mb-5 w-full rounded-lg border-2 border-gray-300 p-3 focus:border-blue-500 focus:outline-none transition"
           />
-        </div>
 
-        <h2 className="text-3xl font-mono font-bold text-center text-black-700 mb-2" style={{ wordSpacing: "-12px" }}>ESS 21 Express</h2>
-        
-        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          className="border-2 border-gray-300 p-3 rounded-lg mb-4 w-full focus:outline-none focus:border-blue-500 transition"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="border-2 border-gray-300 p-3 rounded-lg mb-6 w-full focus:outline-none focus:border-blue-500 transition"
-        />
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 ease-in-out"
-        >
-          Login
-        </button>
+          <label htmlFor="password" className="mb-2 block text-sm font-semibold text-gray-700">
+            Password
+          </label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Masukkan password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="mb-6 w-full rounded-lg border-2 border-gray-300 p-3 focus:border-blue-500 focus:outline-none transition"
+          />
 
-        <div className="text-center mt-4">
-          <button 
-            onClick={() => navigate('/forgot-password')}
-            className="text-blue-500 hover:underline focus:outline-none"
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-blue-600 p-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-blue-700"
           >
-            Forgot Password?
+            Login
           </button>
-        </div>
-      </form>
+
+          <div className="mt-5 text-center">
+            <button
+              type="button"
+              onClick={() => navigate('/forgot-password')}
+              className="text-sm text-blue-600 hover:underline focus:outline-none"
+            >
+              Forgot Password?
+            </button>
+          </div>
+        </form>
+      </main>
     </div>
   );
 };
