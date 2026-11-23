@@ -199,7 +199,7 @@ const ContentLayout = () => {
     }
 
 return (
-    <div className={"leading-normal tracking-normal text-white gradient font-inter flex min-h-screen"}>
+    <div className={"leading-normal tracking-normal text-white font-inter flex min-h-screen bg-[#EAF2FE]"}>
         <NavContext.Provider value={{ navData, navSetData }}>
             <div className={(navData.hide ? 'hidden' : '')}>
                 <Nav />

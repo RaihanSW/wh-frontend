@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css'
 
-import warehouseBG from "../src/assets/img/warehouse_1.webp"
+import warehouseBG from "../src/assets/img/warehouse_1.png"
 
 const LoginPortal = () => {
   const [username, setUsername] = useState('');
@@ -59,23 +59,26 @@ const LoginPortal = () => {
       >
       </section>
 
-      <main className="flex min-h-screen items-center justify-center bg-white px-6 py-10 sm:px-10 lg:px-16">
-        <form onSubmit={handleLogin} className="w-full max-w-md">
-          <div className="mb-8 text-center lg:text-left">
-            <div className="mb-5 flex justify-center">
+      <main className="flex min-h-screen items-center justify-center bg-white px-6 py-5 sm:px-10 lg:px-16">
+        <form onSubmit={handleLogin} className="w-full max-w-md -translate-y-10">
+          <div className="mb-5 text-center lg:text-left">
+            <div className="mb-3 flex justify-center">
               <img
-                src="https://storage.googleapis.com/21e_hayzm5123abc_qweasdzxc/aiRheTjkQwe/web-ess/logo%20ess%20FIX.png"
+                src="/rottenfanger_express.png"
                 alt="21 Express"
                 className="h-28 w-28 object-contain"
               />
             </div>
 
-            <h1 className="text-3xl font-mono font-bold text-gray-900">
-              Warehouse Management
-            </h1>
-            <p className="mt-2 text-sm text-gray-500">
-              Login untuk dapat mengakses fitur Warehouse Management
-            </p>
+            <div className='text-center'>
+              <h1 className="text-3xl font-mono font-bold text-gray-900">
+                Warehouse Management
+              </h1>
+              <p className="mt-2 text-sm text-gray-500">
+                Login untuk dapat mengakses fitur Warehouse Management
+              </p>
+            </div>
+            
           </div>
 
           {error && (
@@ -112,7 +115,7 @@ const LoginPortal = () => {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-blue-600 p-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-blue-700"
+            className="w-full rounded-lg bg-[#B8D4FA] p-3 font-semibold transition duration-300 ease-in-out hover:bg-[#9FC4F5]"
           >
             Login
           </button>
@@ -121,7 +124,7 @@ const LoginPortal = () => {
             <button
               type="button"
               onClick={() => navigate('/forgot-password')}
-              className="text-sm text-blue-600 hover:underline focus:outline-none"
+              className="text-sm text-[#345D98] hover:underline focus:outline-none"
             >
               Forgot Password?
             </button>

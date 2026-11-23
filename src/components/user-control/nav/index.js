@@ -245,7 +245,7 @@ const Nav = () => {
       {/* Top Navbar - Fixed at top */}
       <nav 
         ref={topbarRef}
-        className="fixed top-0 right-0 left-0 z-50 bg-blue-900 shadow-md px-6 py-3 flex justify-between items-center"
+        className="fixed top-0 right-0 left-0 z-50 bg-white shadow-md px-6 py-3 flex justify-between items-center"
         style={{ 
           marginLeft: menuOpen ? "16rem" : "4rem",
           width: menuOpen ? "calc(100% - 16rem)" : "calc(100% - 4rem)"
@@ -255,15 +255,15 @@ const Nav = () => {
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleMenu}
-            className="p-2 bg-blue-900 rounded-lg hover:bg-blue-700 transition-all duration-300 focus:outline-none transform hover:scale-105"
+            className="p-2 bg-[#B8D4FA] rounded-lg hover:bg-[#CEDCFE] transition-all duration-300 focus:outline-none transform hover:scale-105"
             title={menuOpen ? "Close Sidebar" : "Open Sidebar"}
           >
             <FaBars className="text-xl text-white" />
           </button>
           
           {/* Logo/Brand Name */}
-          <h1 className="text-lg font-semibold text-white hidden sm:block hover:text-blue-200 transition-colors duration-300 cursor-default">
-            Employee Self Service
+          <h1 className="text-lg font-semibold text-[#345D98] hidden sm:block hover:text-[#B8D4FA] transition-colors duration-300 cursor-default">
+            Warehouse Management
           </h1>
         </div>
 
@@ -275,8 +275,8 @@ const Nav = () => {
               onClick={toggleProfileDropdown}
               className="flex items-center space-x-2 focus:outline-none hover:opacity-80 transition-opacity group"
             >
-              <FaUserCircle className="text-2xl text-white group-hover:text-blue-200 transition-colors duration-300" />
-              <span className="hidden md:inline text-sm font-medium text-white group-hover:text-blue-200 transition-colors duration-300">
+              <FaUserCircle className="text-2xl text-[#345D98] group-hover:text-[#B8D4FA] transition-colors duration-300" />
+              <span className="hidden md:inline text-sm font-medium text-[#345D98] group-hover:text-[#B8D4FA] transition-colors duration-300">
                 {user?.username || "User"}
               </span>
             </button>
@@ -309,14 +309,14 @@ const Nav = () => {
       </nav>
 
       {/* Main Layout with padding top to account for fixed navbar */}
-      <div style={{ paddingTop: `${topbarHeight}px` }}>
+      <div>
         <div className="flex">
           {/* Sidebar */}
           <aside
             className={`fixed left-0 flex-shrink-0 h-screen ${
               menuOpen ? "w-64" : "w-16"
             } bg-white text-black transition-all duration-300 p-4 flex flex-col items-start space-y-6 border-r border-gray-300 z-40 shadow-2xl shadow-gray-500/50 overflow-y-auto`}
-            style={{ top: `${topbarHeight}px` }}
+            
           >
             {/* Logo Section - Clickable */}
             <div 
@@ -326,14 +326,14 @@ const Nav = () => {
               {menuOpen ? (
                 <div className="flex justify-center w-full px-2">
                   <img 
-                    src="https://storage.googleapis.com/21e_hayzm5123abc_qweasdzxc/aiRheTjkQwe/web-compro/png_21e_logo.png"
+                    src="/rottenfanger_express.png"
                     alt="21 Express Logo"
                     className="w-40 h-20 object-contain rounded-lg"
                   />
                 </div>
               ) : (
                 <img 
-                  src="https://storage.googleapis.com/21e_hayzm5123abc_qweasdzxc/aiRheTjkQwe/web-compro/png_21e_logo.png"
+                  src="/rottenfanger_express.png"
                   alt="21 Express Logo"
                   className="w-14 h-14 object-contain rounded-lg"
                 />
