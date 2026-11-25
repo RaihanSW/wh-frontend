@@ -216,7 +216,7 @@ const Nav = () => {
   };
 
   const handleLogoClick = () => {
-    navigate("/landingpage");
+    navigate("/Dashboard/Storage");
   };
 
   // Close dropdown when clicking outside

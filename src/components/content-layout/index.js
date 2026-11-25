@@ -87,18 +87,8 @@ const DashboardKurir = Loadable({
     loading: Loading
 });
 
-const DashboardList = Loadable({
-    loader: () => import("../apps-library/dashboard/list/"),
-    loading: Loading
-});
-
-const DashboardTrail = Loadable({
-    loader: () => import("../apps-library/dashboard/trail"),
-    loading: Loading
-});
-
-const DashboardTrailDetail = Loadable({
-    loader: () => import("../apps-library/dashboard/trail"),
+const DashboardStorage = Loadable({
+    loader: () => import("../apps-library/dashboard/storage/"),
     loading: Loading
 });
 
@@ -221,12 +211,7 @@ return (
                 
                 
                 {/* <Route path="/Dashboard/Fleet" element={<DashboardFleet />} /> */}
-                <Route path="/Dashboard/Kurir" element={<DashboardKurir />} />
-                <Route path="/Dashboard/Kurir/ListDo/:code" element={<ListDo />} />
-                <Route path="/Dashboard/List" element={<DashboardList/>} />
-                <Route path="/Dashboard/Trail" element={<DashboardTrail />} />
-                <Route path="/Dashboard/Trail/Detail/:platNumber" element={<DashboardTrailDetail />} />
-                <Route path="/Dashboard/Trail/:platNumber" element={<DashboardTrailDetail />} />
+                <Route path="/Dashboard/Storage" element={<DashboardStorage />} />
                 <Route path="/Master/QR" element={<MasterQR/>} />
                 {/* <Route path="/Master/Fleet" element={<MasterFleet/>} /> */}
                 {/* <Route path="/Master/Fleet/Detail/:id" element={<MasterFleetDetail/>} /> */}
