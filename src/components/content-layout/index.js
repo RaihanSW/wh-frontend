@@ -6,59 +6,9 @@ import Loadable from 'react-loadable';
 
 const Loading = () => null;
 
-// const DashboardFlet = Loadable({
-//     loader: () => import("../apps-library/dashboard/fleet"),
-//     loading: Loading
-// });
-
-// const MasterFleetDetail = Loadable({
-//     loader: () => import("../apps-library/masters/fleet/detail"),
-//     loading: Loading
-// });
-
-// Import LandingPage - CORRECTED PATH
-const LandingPage = Loadable({
-    loader: () => import("../landingpage"),
-    loading: Loading
-});
-
-const MasterBank = Loadable({
-    loader: () => import("../apps-library/masters/bank/"),
-    loading: Loading
-});
-
-const MasterFAQList = Loadable({
-    loader: () => import("../apps-library/masters/faq/list/"),
-    loading: Loading
-});
-
-const MasterFAQDetailList = Loadable({
-    loader: () => import("../apps-library/masters/faqdetail/list/"),
-    loading: Loading
-});
-
-const MasterFAQDetailEntry = Loadable({
-    loader: () => import("../apps-library/masters/faqdetail/detail/"),
-    loading: Loading
-});
 
 const ListPengajuanKlaim = Loadable({
     loader: () => import("../apps-library/operations/claim/"),
-    loading: Loading
-});
-
-const PelunasanKlaim = Loadable({
-    loader: () => import("../apps-library/operations/claim/pelunanasanclaim/"),
-    loading: Loading
-});
-
-const PelunasanKlaimDetail = Loadable({
-    loader: () => import("../apps-library/operations/claim/pelunanasanclaim/detail/"),
-    loading: Loading
-});
-
-const AccPengajuanKlaim = Loadable({
-    loader: () => import("../apps-library/operations/acc-pengajuan-claim/"),
     loading: Loading
 });
 
@@ -72,33 +22,8 @@ const PengajuanKlaimDetail = Loadable({
     loading: Loading
 });
 
-const InventarisKlaim = Loadable({
-    loader: () => import("../apps-library/operations/claim/inventarisclaim"),
-    loading: Loading
-});
-
-const InventarisKlaimDetail = Loadable({
-    loader: () => import("../apps-library/operations/claim/inventarisclaim/detail"),
-    loading: Loading
-});
-
-const DashboardKurir = Loadable({
-    loader: () => import("../apps-library/dashboard/kurir/"),
-    loading: Loading
-});
-
 const DashboardStorage = Loadable({
     loader: () => import("../apps-library/dashboard/storage/"),
-    loading: Loading
-});
-
-// const MasterFleet = Loadable({
-//     loader: () => import("../apps-library/masters/fleet/"),
-//     loading: Loading
-// });
-
-const MasterQR = Loadable({
-    loader: () => import("../apps-library/masters/print-qr/"),
     loading: Loading
 });
 
@@ -152,25 +77,6 @@ const UserList = Loadable({
     loading: Loading
 });
 
-const ListDo = Loadable({
-    loader: () => import("../apps-library/dashboard/kurir/deliveryorder"),
-    loading: Loading
-});
-
-const ResiDetails = Loadable({
-    loader: () => import("../apps-library/dashboard/kurir/deliveryorder/resi"),
-    loading: Loading
-});
-
-const TicketLists = Loadable({
-    loader: () => import("../apps-library/operations/ticket/list"),
-    loading: Loading
-});
-
-const TicketListDetail = Loadable({
-    loader: () => import("../apps-library/operations/ticket/detail"),
-    loading: Loading
-});
 
 export const NavContext = createContext(null);
 
@@ -197,29 +103,12 @@ return (
             <div className="flex-grow">
             <Routes>
                 {/* LandingPage Route */}
-                <Route path="/landingpage" element={<LandingPage />} />
                 <Route path="/Operations/Claim" element={<ListPengajuanKlaim />} />
-                <Route path="/Operations/Tickets/List" element={<TicketLists />} />
-                <Route path="/Operations/Tickets/Detail/:id" element={<TicketListDetail />} />
-                <Route path="/Operations/Claim/Inventory" element={<InventarisKlaim />} />
-                <Route path="/Operations/Claim/Inventory/Detail/:id" element={<InventarisKlaimDetail />} />
-                <Route path="/Operations/Claim/Payment/" element={<PelunasanKlaim/>} />
-                <Route path="/Operations/Claim/Payment/Detail" element={<PelunasanKlaimDetail/>} />
                 <Route path="/Operations/Claim/List/:id" element={<PengajuanKlaimList />} />
                 <Route path="/Operations/Claim/Detail" element={<PengajuanKlaimDetail />} />
-                <Route path="/Operations/AccPengajuanKlaim" element={<AccPengajuanKlaim />} />
-                
                 
                 {/* <Route path="/Dashboard/Fleet" element={<DashboardFleet />} /> */}
                 <Route path="/Dashboard/Storage" element={<DashboardStorage />} />
-                <Route path="/Master/QR" element={<MasterQR/>} />
-                {/* <Route path="/Master/Fleet" element={<MasterFleet/>} /> */}
-                {/* <Route path="/Master/Fleet/Detail/:id" element={<MasterFleetDetail/>} /> */}
-                <Route path="/Master/Bank" element={<MasterBank/>} />
-                <Route path="/Master/FAQ/List" element={<MasterFAQList/>} />
-                <Route path="/Master/FAQDetail/List/:id" element={<MasterFAQDetailList/>} />
-                <Route path="/Master/FAQDetail/Detail/:id" element={<MasterFAQDetailEntry/>} />
-
 
                 <Route path="/Menu/Webmenu/List" element={<MenuWebmenuList/>} />
                 <Route path="/Menu/Webmenu/Detail/:id" element={<MenuWebmenuDetail/>} />
@@ -231,7 +120,6 @@ return (
                 <Route path="/Users/Role/Detail/:id" element={<Roledetail/>} />
                 <Route path="/Users/User/Detail/:uid" element={<UserDetail/>} />
                 <Route path="/Users/User/List" element={<UserList/>} />
-                <Route path="/Dashboard/Kurir/ListDo/:code/resi/:resi" element={<ResiDetails />} />
             </Routes>
             </div>           
             {/* <Footer />   */}

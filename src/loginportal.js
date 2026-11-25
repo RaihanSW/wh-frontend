@@ -43,7 +43,7 @@ const LoginPortal = () => {
       localStorage.setItem('token', data.warehouse.results.token);
       console.log(data.warehouse.results.token);
       debugger
-      navigate('/landingpage');
+      navigate('/Dashboard/Storage'); // ganti ini nanti ya
     } catch (err) {
       setError(err.message);
       console.error('Login Error:', err);
