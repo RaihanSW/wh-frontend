@@ -39,9 +39,9 @@ const LoginPortal = () => {
       }
 
       const data = await response.json();
-      localStorage.setItem('account', JSON.stringify(data.results.data));
-      localStorage.setItem('token', data.results.token);
-      console.log(data.results.token);
+      localStorage.setItem('account', JSON.stringify(data.warehouse.results.data));
+      localStorage.setItem('token', data.warehouse.results.token);
+      console.log(data.warehouse.results.token);
       debugger
       navigate('/landingpage');
     } catch (err) {
